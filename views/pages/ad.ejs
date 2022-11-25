@@ -1,0 +1,48 @@
+<%- include('../components/header.ejs'); %>
+
+    <div class="container">
+        <h1>Create Ad</h1>
+        <form method="post" action="/ad" class="row g-3 needs-validation">
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Ad Sets </label>
+                <select class="form-control" name="adSetId">
+                    <% for(var i=0; i < adSets.length; i++) { %>
+                        <option value="<%= adSets[i].id %>">
+                            <%= adSets[i].name %>
+                        </option>
+                        <% } %>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Ad Video </label>
+                <select class="form-control" name="videoID">
+                    <% for(var i=0; i < adVideos.length; i++) { %>
+                        <option value="<%= adVideos[i].id %>">
+                            <%= adVideos[i].title %>
+                        </option>
+                        <% } %>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">title</label>
+                <input type="text" class="form-control" name="title" required>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">description</label>
+                <input type="text" class="form-control" name="description" required>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">body</label>
+                <input type="text" class="form-control" name="body" required>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">website URL</label>
+                <input type="text" class="form-control" name="websiteURL" required>
+            </div>
+
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+        </form>
+    </div>
+    <%- include('../components/footer.ejs'); %>

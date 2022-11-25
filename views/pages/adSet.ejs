@@ -1,0 +1,82 @@
+<%- include('../components/header.ejs'); %>
+
+    <!-- (<%= locals.campaignId %>) -->
+    <div class="container">
+        <h1>Create Ad set </h1>
+
+        <form method="post" action="/ad-set" class="row g-3 needs-validation"
+            novalidate>
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Campaign </label>
+                <select class="form-control" name="campaignId">
+                    <% for(var i=0; i < campaigns.length; i++) { %>
+                        <option value="<%= campaigns[i].id %>">
+                            <%= campaigns[i].name %>
+                        </option>
+                        <% } %>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Ad Set Name</label>
+                <input type="text" class="form-control" name="name" required>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Date & Time</label>
+                <input type="datetime-local" class="form-control" name="dateAndTime" required>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Location </label>
+                <select class="form-control" name="location" multiple required>
+                    <option value="CH">Switzerland</option>
+                    <option value="AT">Austria</option>
+                    <option value="DE">Germany</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Gender</label>
+                <select class="form-control" name="genders">
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Min Age</label>
+                <input type="number" class="form-control" name="minAge" value="18" readonly required>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Max Age</label>
+                <input type="number" class="form-control" name="maxAge" value="35" readonly required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Interests </label>
+                <select class="form-control" name="interests" multiple>
+                    <option value="6002969794329">Spotify</option>
+                    <option value="6002972306174">Deutschrap</option>
+                    <option value="6003195174098">Love</option>
+                    <option value="6003225556345">Hip hop music</option>
+                    <option value="6003702018890">Romance (music)</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Platforms </label>
+                <select class="form-control" name="positions" multiple>
+                    <option value="FACE_feed">Facebook Feed</option>
+                    <option value="FACE_story">Facebook Story</option>
+                    <option value="INSTA_stream">Instagram Feed</option>
+                    <option value="INSTA_story">Instagram Story</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Platforms </label>
+                <select class="form-control" name="platforms" multiple>
+                    <option value="desktop">desktop</option>
+                    <option value="mobile">mobile</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+        </form>
+    </div>
+    <%- include('../components/footer.ejs'); %>

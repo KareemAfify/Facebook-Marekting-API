@@ -1,0 +1,24 @@
+<%- include('../components/header.ejs'); %>
+
+    <div class="container">'
+        <Section class="header">
+            <h1>Ad Video</h1>
+        </Section>
+
+
+        <form method="post" action="videos" class="row g-3 needs-validation" >
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Video URL</label>
+                <input type="text" class="form-control" name="url" required>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">Video Title</label>
+                <input type="text" class="form-control" name="title" required>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+        </form>
+    </div>
+
+    <%- include('../components/footer.ejs'); %>
