@@ -20,6 +20,6 @@ $ npm run start:dev
 ## Build the app
 
 ```bash
-$ npm run buidl
+$ npm run build
 
 ```
